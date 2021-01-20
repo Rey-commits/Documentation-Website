@@ -1,1 +1,281 @@
+/* UTILITY */
+:root {
+  --black: #252525;
+  --grey: #505050;
+  --grey1: #999999;
+  --grey2: #d6d6d6;
+  --grey3: #eeeeee;
+  --yellow: #f0db4f;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  color: gold;;
+
+}
+
+body {
+  background-color: var(--grey3);
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+a,
+li {
+  font-family: "Open Sans", sans-serif;
+}
+
+p,
+li {
+  line-height: 1.6em;
+}
+/* END OF UTILITY */
+
+/* NAVBAR */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 300px;
+  height: 100%;
+  background-color: #fff;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  background-color: gold;
+  transition: all 0.3s ease;
+}
+
+#navbar header {
+  padding: 16px 24px;
+  background-color: purple;
+  box-shadow: 0 4px 15px #cacaca;
+}
+
+nav ul {
+  height: 90%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+nav ul li {
+  list-style: none;
+  border-top: solid 0.5px rgba(170, 170, 170, 0.5);
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--black);
+  padding: 16px 24px;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+  background-color: var(--grey3);
+}
+
+/* END OF NAVBAR */
+
+/* MAIN */
+#main-doc {
+  margin-left: 300px;
+}
+
+#main-doc ul {
+  margin-left: 72px;
+}
+
+#main-doc ul li {
+  margin-top: 16px;
+}
+
+.main-section {
+  background-color: #fff;
+  margin: 48px 32px;
+  margin-top: 64px;
+  padding: 24px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px #cacaca;
+}
+
+.main-section p {
+  margin-top: 24px;
+}
+
+.main-section p,
+li {
+  color: var(--grey);
+}
+
+.main-section code {
+  display: block;
+  text-align: left;
+  white-space: pre-line;
+  position: relative;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 2;
+  background-color: var(--grey3);
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+#reference {
+  background-color: purple;
+  color: gold;
+}
+
+.footer-sentence {
+  color: gold;
+}
+
+.MDN-link {
+  color: gold;
+}
+/* END OF MAIN */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  #navbar {
+    position: sticky;
+    min-width: 100%;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0 4px 15px #cacaca;
+    background-color: purple;
+    z-index: 99;
+  }
+
+  .burger {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    top: 20px;
+    left: 20px;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: 0;
+    top: 72px;
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    transform: translateX(-105%);
+    transition: transform 0.5s ease-in;
+    overflow-x: hidden;
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+  .nav-close {
+    transform: translateX(100%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+
+  .toggle .line1 {
+    background-color: var(--black);
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    background-color: var(--black);
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  #navbar header {
+    padding: 16px 24px;
+    background-color: purple;
+    box-shadow: none;
+  }
+
+  nav ul {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 72px;
+    left: 0;
+    height: 90vh;
+    background-color: #fff;
+  }
+  nav ul li a {
+    padding: 20px 24px;
+  }
+
+  #main-doc {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+
+  #main-doc ul {
+    margin-left: 36px;
+  }
+
+  .main-section {
+    background-color: #fff;
+    margin: 24px 16px;
+    margin-top: 32px;
+    padding: 24px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px #cacaca;
+  }
+
+  .main-section code {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    white-space: pre-line;
+    position: relative;
+    word-break: normal;
+    word-wrap: break-word;
+    line-height: 2;
+    background-color: var(--grey3);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+  }
+}
